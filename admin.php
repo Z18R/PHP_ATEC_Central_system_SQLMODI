@@ -45,7 +45,7 @@ if (!isset($_SESSION["loggedin"])) {
     include_once 'phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT * FROM sys_Links";
+    $sql = "[dbo].[sys_Admin] ";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);

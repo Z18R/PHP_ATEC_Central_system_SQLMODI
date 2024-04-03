@@ -45,7 +45,7 @@ if (!isset($_SESSION["loggedin"])) {
     include_once '../phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT TOP 10 * FROM sys_Links WHERE Department = 'Planning'";
+    $sql = "[dbo].[sys_Planning]";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);

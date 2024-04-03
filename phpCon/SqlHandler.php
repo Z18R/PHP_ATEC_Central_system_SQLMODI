@@ -16,7 +16,7 @@
 // 
 function executeSQLQuery($sql, $params = array()) {
     // Database connection options
-    $serverName = "ELOG-SVR"; // Server name
+    $serverName = "MSDynamics-DB\AXDB"; // Server name
     $connectionOptions = array(
         "Database" => "CentralAccess", // Database name
         "Uid" => "sa",                 // Username

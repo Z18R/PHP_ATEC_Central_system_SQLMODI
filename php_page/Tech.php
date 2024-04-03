@@ -34,7 +34,7 @@
     include_once '../phpCon/SqlHandler.php';
 
     // Example SQL query
-    $sql = "SELECT TOP 10 * FROM sys_Links WHERE Department = 'Tech'";
+    $sql = "[dbo].[sys_Tech]";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);

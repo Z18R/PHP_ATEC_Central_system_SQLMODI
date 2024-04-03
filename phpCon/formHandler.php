@@ -12,8 +12,8 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 // Prepare SQL query
-$sql = "SELECT username, password, Remarks FROM users A 
-        LEFT JOIN ATEC_Category B ON A.Remarks = B.TYPE 
+$sql = "SELECT * FROM Users A
+        LEFT JOIN sys_Department b ON A.Remarks = b.ID
         WHERE username = ? AND password = ?";
 
 // Execute the SQL query
@@ -31,18 +31,18 @@ if (!empty($results)) {
 
     // Redirect based on user's Remarks
     switch ($row['Remarks']) {
-        case 'admin':
+        case '1':
             // header("Location: ../admin.php");
             echo "<script>window.location='../admin.php';</script>";
             exit;
-        case 'Planning':
+        case '2':
+            header("Location: ../php_page/Tech.php");
+            exit;
+        case '3':
             header("Location: ../php_page/planning.php");
             exit;
-        case 'Eng':
+        case '4':
             header("Location: ../php_page/engineering.php");
-            exit;
-        case 'Tech':
-            header("Location: ../php_page/Tech.php");
             exit;
         default:
             header("Location: ../default.php");
