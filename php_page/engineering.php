@@ -15,7 +15,7 @@ if (!isset($_SESSION["loggedin"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../images/LOGO.png" type="image/png">
+    <link rel="icon" href="../images/LOGO.ico" type="image/png">
     <title>Engineering</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/defaultCss.css">
@@ -34,6 +34,7 @@ if (!isset($_SESSION["loggedin"])) {
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
+            <p class="text-white">Hi <?php echo $_SESSION["username"]; ?></p>
             <li class="nav-item ml-auto">
                 <a class="nav-link go-back text-white" href="../">Go Back</a>
             </li>
@@ -45,7 +46,7 @@ if (!isset($_SESSION["loggedin"])) {
     include_once '../phpCon/SqlHandler.php';
     
     // Example SQL query
-    $sql = "[dbo].[Eng]";
+    $sql = "[dbo].[sys_Eng]";
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);

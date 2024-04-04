@@ -60,6 +60,7 @@ if (!empty($results)) {
     <!-- your head content -->
 </head>
 <body>
+    <script src="../script.js"></script>
     <!-- your HTML content -->
     <div>
         <p><?php echo $error_message; 123 ?></p>

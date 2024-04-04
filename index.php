@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/LOGO.png" type="image/png">
+    <link rel="icon" href="images/LOGO.ico" type="image/png">
     <title>SIGNIN FORM</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -136,12 +136,12 @@ session_start();
 
 
     <div class="container div-container">
-    <div class="card mt-3">
+    <div class="card mt-1">
         <div class="card-body">
             <form action="phpCon/formHandler.php" method="post" class="mt_form">
                 <h2 class="card-title">Login</h2>
                 <div class="form-group">
-                    <label for="username">Username or Email:</label>
+                    <label for="username">Username:</label>
                     <input type="text" id="username" name="username" class="form-control" required>
                 </div>
                 <div class="form-group">
@@ -188,5 +188,6 @@ session_start();
             <p>IT Development Team 2024</p>
         </div>
     </footer>
+<script src="script.js"></script>
 </body>
 </html>
