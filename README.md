@@ -46,6 +46,7 @@ Regedit
 
 Localmachine>software>Microsoft>windows>CurrentVersion>policies>system
 Enable LUA - 0
+
 ----------------------------------------------------------------------------------------------------------------
 
 2. Connect PHP to Mes_ATEC (Database)
