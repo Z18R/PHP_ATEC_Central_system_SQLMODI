@@ -21,7 +21,7 @@ function executeSQLQuery($sql, $params = array()) {
         "Database" => "CentralAccess", // Database name
         "Uid" => "sa",                 // Username
         "PWD" => "p@ssw0rd",        // Password
-        "TrustServerCertificate" => true
+	"TrustServerCertificate"=> True
     );
 
     // Connect to the database

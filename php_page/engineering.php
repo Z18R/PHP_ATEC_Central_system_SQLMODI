@@ -50,11 +50,16 @@ if (!isset($_SESSION["loggedin"])) {
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);
-
+    ?>
+    <div class="container mt-5">
+    <div class="row">
+    <?php
     foreach ($results as $row) {
-        echo "<h5>{$row['Title']}</h5>";
-        echo "<div class='user-info'>";
-        echo "<ul>";
+        echo "<div class='col-md-6 col-lg-4 mb-4'>";
+        echo "<div class='card'>";
+        echo "<div class='card-body' style='height: 150px;'>";
+        echo "<h5 class='card-title'>{$row['Title']}</h5>";
+        echo "<ul class='list-unstyled'>";
 
         // Check if redirect_link1 exists and is not null
         if (!empty($row['redirect_link1'])) {
@@ -73,11 +78,13 @@ if (!isset($_SESSION["loggedin"])) {
             echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
         }
         echo "</ul>";
-        echo "</div>"; // Close user-info div
-        echo "<hr>";
+        echo "</div>"; // Close card-body div
+        echo "</div>"; // Close card div
+        echo "</div>"; // Close col div
     }
     ?>
-</div>
+    </div> 
+</div> 
 
 
 <!-- Footer -->
