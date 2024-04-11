@@ -23,7 +23,7 @@ session_start();
         .login-container {
             max-width: 400px;
             margin: auto;
-            margin-top: 100px;
+            margin-top: 30px;
             border: 1px solid #ccc;
             padding: 30px;
             border-radius: 10px;
