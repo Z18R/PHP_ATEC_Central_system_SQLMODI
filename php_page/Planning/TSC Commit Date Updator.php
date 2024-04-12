@@ -18,9 +18,7 @@ if (!isset($_SESSION["loggedin"])) {
     <section>
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-2 fixed-top ">
             <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-            <li class="nav-item ml-auto">
-                <a class="nav-link go-back text-white" href="../Planning.php">Go Back</a>
-            </li>
+           
     </section>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

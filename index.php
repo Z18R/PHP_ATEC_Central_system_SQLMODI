@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/LOGO.ico" type="image/png">
-    <title>Default</title>
+    <title>ATEC Central System - Default</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/defaultCss.css">
     <style>
@@ -25,13 +25,17 @@
     <link rel="stylesheet" href="styles/defaultCss.css">
 </head>
 <body>
-    <section>
-        <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
-            <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-            <li class="nav-item ml-auto">
+<section>
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-1 fixed-top">
+        <!-- <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span> -->
+        <span class="ml-5"></span><span href="#" class="navbar-brand"><img src="images/LOGO.png" alt="" style="width: 90px; height: 90px;"><span class="mr-2"></span>CENTRAL SYSTEMS</span>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
                 <a class="nav-link go-back text-white" href="../login.php"><strong>LOGIN</strong></a>
             </li>
-    </section>  
+        </ul>
+    </nav>
+</section>
 
 <!-- ATEC E-LOGSHEET (LIVE) -->
 
@@ -97,7 +101,7 @@
     <div class="row">
     <?php
         foreach ($results as $row) {
-            echo "<div class='col-md-6 col-lg-4 mb-4'>";
+            echo "<div class='col-md-6 col-lg-4 mb-4 mt-3'>";
             echo "<div class='card'>";
             echo "<div class='card-body' style='height: 150px;'>";
             echo "<h5 class='card-title'>{$row['Title']}</h5>";
