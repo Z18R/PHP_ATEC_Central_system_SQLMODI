@@ -50,7 +50,7 @@ if (!empty($results)) {
     }
 } else {
     // No rows returned, handle accordingly
-    header("Location: ../index.php?error=no_rows");
+    header("Location: ../login.php?error=no_rows");
 }
 ?>
 

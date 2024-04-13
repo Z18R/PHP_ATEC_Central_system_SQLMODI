@@ -18,27 +18,26 @@ if (!isset($_SESSION["loggedin"])) {
     <link rel="icon" href="../images/LOGO.ico" type="image/png">
     <title>Planning</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/defaultCss.css">
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atec Directory</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/defaultCss.css">
+    <style>
+        li a{
+            font-size: 16px;
+        }
+    </style>
+
 </head>
-<body>
-    <section>
-        <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
-            <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-            <p class="text-white">Hi <?php echo $_SESSION["username"]; ?></p>
-            <li class="nav-item ml-auto">
-                <a class="nav-link go-back text-white" href="../">Go Back</a>
+<section>
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-1 fixed-top">
+        <!-- <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span> -->
+        <span class="ml-5"></span><span href="#" class="navbar-brand"><img src="../images/LOGO.png" alt="" style="width: 90px; height: 90px;"><span class="mr-2"></span>CENTRAL SYSTEMS</span>
+        <p class="text-white">Hi <?php echo $_SESSION["username"]; ?></p>
+        <ul class="navbar-nav ml-auto">
+         <li class="nav-item mr-3">
+                <a class="nav-link go-back text-white" href="../login.php"><strong>Go Back</strong></a>
             </li>
-    </section>  
+        </ul>
+    </nav>
+</section>  
 
 <div class="AtecWebsite">
     <?php
@@ -50,11 +49,16 @@ if (!isset($_SESSION["loggedin"])) {
 
     // Execute the SQL query
     $results = executeSQLQuery($sql);
-
+    ?>
+    <div class="container mt-5">
+    <div class="row">
+    <?php
     foreach ($results as $row) {
-        echo "<h5>{$row['Title']}</h5>";
-        echo "<div class='user-info'>";
-        echo "<ul>";
+        echo "<div class='col-md-6 col-lg-4 mb-4'>";
+        echo "<div class='card'>";
+        echo "<div class='card-body' style='height: 150px;'>";
+        echo "<h5 class='card-title'>{$row['Title']}</h5>";
+        echo "<ul class='list-unstyled'>";
 
         // Check if redirect_link1 exists and is not null
         if (!empty($row['redirect_link1'])) {
@@ -73,11 +77,13 @@ if (!isset($_SESSION["loggedin"])) {
             echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
         }
         echo "</ul>";
-        echo "</div>"; // Close user-info div
-        echo "<hr>";
+        echo "</div>"; // Close card-body div
+        echo "</div>"; // Close card div
+        echo "</div>"; // Close col div
     }
     ?>
-</div>
+    </div> 
+</div> 
 
 
 <!-- Footer -->
