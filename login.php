@@ -181,9 +181,11 @@ session_start();
 <body>
     <!-- Navbar -->
     <section>
-        <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
-            <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-    </section> 
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-1 fixed-top">
+        <!-- <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span> -->
+        <span class="ml-5"></span><span href="#" class="navbar-brand"><img src="images/LOGO.png" alt="" style="width: 90px; height: 90px;"><span class="mr-2"></span>CENTRAL SYSTEMS</span>
+    </nav>
+</section>
     
     <!-- add the whole code -->
         <div class="container login-container">

@@ -6,6 +6,10 @@ body {
     padding-top: 60px;
 }
 
+li a{
+    font-size: 16px
+}
+
 .AtecWebsite {
     margin: 20px 50px;
     padding: 0;
@@ -128,6 +132,8 @@ footer p {
   
     span {
         font-size: 25px;
+        font-style: italic;
+        font-weight: bold;
     }
 
     .Cfooter{

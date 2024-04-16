@@ -12,6 +12,30 @@
       a strong{
         font-size:15px;
       }
+      li a {
+        font-size:16px
+      }
+    .card {
+        height: 100%; 
+    }
+
+    .card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        cursor: pointer; 
+    }
+
+    .card:hover .card-img { 
+        opacity: 0.8; 
+    }
+
+    .card-img {
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+        transition: opacity 0.3s; 
+    }
+
+
     </style>
 </head>
 <body>
@@ -30,7 +54,7 @@
         <!-- <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span> -->
         <span class="ml-5"></span><span href="#" class="navbar-brand"><img src="images/LOGO.png" alt="" style="width: 90px; height: 90px;"><span class="mr-2"></span>CENTRAL SYSTEMS</span>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item mr-3">
                 <a class="nav-link go-back text-white" href="../login.php"><strong>LOGIN</strong></a>
             </li>
         </ul>
@@ -100,36 +124,45 @@
     <div class="container mt-1">
     <div class="row">
     <?php
-        foreach ($results as $row) {
-            echo "<div class='col-md-6 col-lg-4 mb-4 mt-3'>";
-            echo "<div class='card'>";
-            echo "<div class='card-body' style='height: 150px;'>";
-            echo "<h5 class='card-title'>{$row['Title']}</h5>";
-            echo "<ul class='list-unstyled'>";
+  foreach ($results as $row) {
 
-            if (!empty($row['redirect_link1'])) {
-                echo "<li><a href='" . $row['redirect_link1'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link1'] . "</a></li>";
-            }
+    echo "<div class='col-md-6 col-lg-4 mb-4 mt-3'>";
+    echo "<div class='card'>";
+    echo "<div class='col-md-6 col-lg-4 mb-4 mt-3'>";
+    if (!empty($row['Department_image'])) {
+      echo "<img src='" . $row['Department_image'] . "' alt='Hello Image'>";
+  } else {
+      echo "no image";
+      continue;
+  }
+    echo "</div>";
+    echo "<div class='card-body' style='height: 150px;'>";
+    echo "<h5 class='card-title'>{$row['Title']}</h5>";
+    echo "<ul class='list-unstyled'>";
+    
+    if (!empty($row['redirect_link1'])) {
+        echo "<li><a href='" . $row['redirect_link1'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link1'] . "</a></li>";
+    }
 
-            if (!empty($row['redirect_link2'])) {
-                echo "<li><a href='" . $row['redirect_link2'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link2'] . "</a></li>";
-            }
+    if (!empty($row['redirect_link2'])) {
+        echo "<li><a href='" . $row['redirect_link2'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link2'] . "</a></li>";
+    }
 
-            if (!empty($row['redirect_link3'])) {
-                echo "<li><a href='" . $row['redirect_link3'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link3'] . "</a></li>";
-            }
+    if (!empty($row['redirect_link3'])) {
+        echo "<li><a href='" . $row['redirect_link3'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link3'] . "</a></li>";
+    }
 
-            if (!empty($row['redirect_link4'])) {
-                echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
-            }
-            echo "</ul>";
-            echo "</div>"; // Close card-body div
-            echo "</div>"; // Close card div
-            echo "</div>"; // Close col div
-        }
-        ?>
-    </div> 
-</div> 
+    if (!empty($row['redirect_link4'])) {
+        echo "<li><a href='" . $row['redirect_link4'] . "' target='_blank' rel='noopener noreferrer'>" . $row['link4'] . "</a></li>";
+    }
+
+    
+    echo "</ul>";
+    echo "</div>"; // Close card-body div
+    echo "</div>"; // Close card div
+    echo "</div>"; // Close col div
+}
+?>
 
 
 <!-- Footer -->

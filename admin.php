@@ -19,6 +19,14 @@ if (!isset($_SESSION["loggedin"])) {
     <title>Admin Site</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+      a strong{
+        font-size:15px;
+      }
+      li a {
+        font-size:16px
+      }
+    </style>
 </head>
 <body>
 <!DOCTYPE html>
@@ -31,14 +39,18 @@ if (!isset($_SESSION["loggedin"])) {
     <link rel="stylesheet" href="styles/defaultCss.css">
 </head>
 <body>
-    <section>
-        <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-4 fixed-top ">
-            <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span>
-            <p class="text-white">Hi <?php echo $_SESSION["username"]; ?></p>
-            <li class="nav-item ml-auto">
-                <a class="nav-link go-back text-white" href="../">Go Back</a>
+<section>
+    <nav class="navbar navbar-expand-xl bg-dark navbar-dark p-1 fixed-top">
+        <!-- <span href="#" class="navbar-brand"><span>ATEC </span>CENTRAL SYSTEMS</span> -->
+        <span class="ml-5"></span><span href="#" class="navbar-brand"><img src="images/LOGO.png" alt="" style="width: 90px; height: 90px;"><span class="mr-2"></span>CENTRAL SYSTEMS</span>
+        <p class="text-white">Hi <?php echo $_SESSION["username"]; ?></p>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mr-3">
+                <a class="nav-link go-back text-white" href="../login.php"><strong>Go Back</strong></a>
             </li>
-    </section>  
+        </ul>
+    </nav>
+</section>
 
 <div class="AtecWebsite">
     <?php
@@ -51,7 +63,7 @@ if (!isset($_SESSION["loggedin"])) {
     // Execute the SQL query
     $results = executeSQLQuery($sql);
     ?>
-    <div class="container mt-1">
+    <div class="container mt-3">
     <div class="row">
     <?php
         foreach ($results as $row) {
